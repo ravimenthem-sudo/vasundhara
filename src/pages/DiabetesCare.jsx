@@ -373,7 +373,7 @@ export default function DiabetesCare() {
 
           <div className="gestational-img-wrap">
             <img 
-              src="/images/diabetes_care_consultation.jpg" 
+              src="/images/reassuring_ultrasound_modern_clinic.png" 
               alt="Gestational Diabetes Care Consultation" 
               className="gestational-banner-img"
             />

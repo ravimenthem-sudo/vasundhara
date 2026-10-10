@@ -6,7 +6,8 @@ import {
   ArrowRight,
   Activity, 
   Calendar,
-  Phone
+  Phone,
+  ChevronDown
 } from 'lucide-react';
 import { siteConfig } from '../data/siteData';
 import './Navbar.css';
@@ -70,30 +71,32 @@ export default function Navbar() {
             <NavLink to="/" end className={({ isActive }) => `ref-nav-link ${isActive ? 'active' : ''}`}>
               Home
             </NavLink>
-            <NavLink to="/about" className={({ isActive }) => `ref-nav-link ${isActive ? 'active' : ''}`}>
-              About
-            </NavLink>
-            <NavLink to="/fetal-medicine" className={({ isActive }) => `ref-nav-link ${isActive ? 'active' : ''}`}>
-              Fetal Medicine
-            </NavLink>
-            <NavLink to="/diabetes-care" className={({ isActive }) => `ref-nav-link ${isActive ? 'active' : ''}`}>
-              Diabetes Care
-            </NavLink>
-            <NavLink to="/services" className={({ isActive }) => `ref-nav-link ${isActive ? 'active' : ''}`}>
-              Services
-            </NavLink>
-            <NavLink to="/doctors" className={({ isActive }) => `ref-nav-link ${isActive ? 'active' : ''}`}>
-              Doctors
-            </NavLink>
-            <NavLink to="/patient-guide" className={({ isActive }) => `ref-nav-link ${isActive ? 'active' : ''}`}>
-              Patient Guide
-            </NavLink>
-            <NavLink to="/reviews" className={({ isActive }) => `ref-nav-link ${isActive ? 'active' : ''}`}>
-              Reviews
-            </NavLink>
-            <NavLink to="/contact" className={({ isActive }) => `ref-nav-link ${isActive ? 'active' : ''}`}>
-              Contact
-            </NavLink>
+            
+            <div className="nav-dropdown-group">
+              <span className="ref-nav-link dropdown-trigger">About Us <ChevronDown size={14} className="dropdown-icon" /></span>
+              <div className="nav-dropdown-menu">
+                <NavLink to="/about" className={({ isActive }) => `dropdown-item ${isActive ? 'active' : ''}`}>About Clinic</NavLink>
+                <NavLink to="/doctors" className={({ isActive }) => `dropdown-item ${isActive ? 'active' : ''}`}>Our Doctors</NavLink>
+                <NavLink to="/reviews" className={({ isActive }) => `dropdown-item ${isActive ? 'active' : ''}`}>Patient Reviews</NavLink>
+              </div>
+            </div>
+
+            <div className="nav-dropdown-group">
+              <span className="ref-nav-link dropdown-trigger">Clinical Services <ChevronDown size={14} className="dropdown-icon" /></span>
+              <div className="nav-dropdown-menu">
+                <NavLink to="/fetal-medicine" className={({ isActive }) => `dropdown-item ${isActive ? 'active' : ''}`}>Fetal Medicine</NavLink>
+                <NavLink to="/diabetes-care" className={({ isActive }) => `dropdown-item ${isActive ? 'active' : ''}`}>Diabetes Care</NavLink>
+                <NavLink to="/services" className={({ isActive }) => `dropdown-item ${isActive ? 'active' : ''}`}>All Services</NavLink>
+              </div>
+            </div>
+
+            <div className="nav-dropdown-group">
+              <span className="ref-nav-link dropdown-trigger">Patient Info <ChevronDown size={14} className="dropdown-icon" /></span>
+              <div className="nav-dropdown-menu">
+                <NavLink to="/patient-guide" className={({ isActive }) => `dropdown-item ${isActive ? 'active' : ''}`}>Patient Guide</NavLink>
+                <NavLink to="/contact" className={({ isActive }) => `dropdown-item ${isActive ? 'active' : ''}`}>Contact</NavLink>
+              </div>
+            </div>
           </nav>
 
           {/* Nav Right CTA Action */}

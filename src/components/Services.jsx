@@ -11,7 +11,8 @@ const SERVICES_SHOWCASE_DATA = [
     title: "Fetal Medicine & Ultrasound",
     category: "SPECIALIZED MATERNAL CARE",
     desc: "First trimester NT screening, 3D/4D ultrasound imaging, targeted anomaly scans (TIFFA), and fetal Doppler surveillance led by Dr. N. Vasundhara.",
-    image: "/images/fetal_medicine_scan.jpg",
+    image: "/images/warm_ultrasound_consultation.png",
+    objectPosition: "85% center",
     route: "/fetal-medicine"
   },
   {
@@ -21,7 +22,7 @@ const SERVICES_SHOWCASE_DATA = [
     title: "Ultrasound & Sonography",
     category: "HIGH PRECISION IMAGING",
     desc: "High-definition diagnostic abdominal, pelvic, obstetric, and Doppler sonography with structured clinical reporting.",
-    image: "/images/fetal_ultrasound_suite.jpg",
+    image: "/images/reassuring_maternity_ultrasound.png",
     route: "/services"
   },
   {
@@ -41,7 +42,7 @@ const SERVICES_SHOWCASE_DATA = [
     title: "General Medicine",
     category: "PHYSICIAN CONSULTATION",
     desc: "Expert general medical care, acute illness evaluation, and primary healthcare consultation by Dr. V. Sai Kiran Reddy.",
-    image: "/images/about_clinic_interior.jpg",
+    image: "/images/friendly_doctor_patient.png",
     route: "/doctors"
   },
   {
@@ -51,7 +52,7 @@ const SERVICES_SHOWCASE_DATA = [
     title: "Diabetes Care",
     category: "SAI KIRAN DIABETIC CLINIC",
     desc: "Comprehensive blood sugar profiling, HbA1c tracking, gestational diabetes management, and organ protection strategies.",
-    image: "/images/diabetes_care_consultation.jpg",
+    image: "/images/diabetes_care_consultation_in_clinic.png",
     route: "/diabetes-care"
   },
   {
@@ -61,7 +62,7 @@ const SERVICES_SHOWCASE_DATA = [
     title: "Preventive Care",
     category: "WELLNESS & SCREENING",
     desc: "Preventive health screening, diabetic foot care, neuropathy evaluation, and long-term metabolic health guidance.",
-    image: "/images/pregnancy_ultrasound_scan.jpg",
+    image: "/images/preventive_health_screening_consultation.png",
     route: "/services"
   }
 ];
@@ -94,6 +95,7 @@ export default function Services() {
                 alt={activeService.title} 
                 className="service-featured-img" 
                 key={activeService.id}
+                style={{ objectPosition: activeService.objectPosition || 'center' }}
               />
               <div className="service-image-badge">
                 <span>{activeService.category}</span>

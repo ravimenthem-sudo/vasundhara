@@ -25,7 +25,7 @@ export default function Facility() {
         {/* DOMINANT PANORAMIC CLINIC IMAGE */}
         <div className="facility-panoramic-card">
           <img 
-            src="/images/about_clinic_interior.jpg" 
+            src="/images/welcoming_clinic_reception.png" 
             alt="Vasundhara Diagnostics & Fetal Medicine Suite" 
             className="facility-panoramic-img"
             loading="lazy"

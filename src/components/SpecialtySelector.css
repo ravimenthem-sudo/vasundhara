@@ -4,7 +4,7 @@
    ============================================================ */
 
 .specialty-care-section {
-  padding: 2.5rem 0 3rem;
+  padding: 4rem 0 3rem; /* Added 4rem top padding for breathing room */
   background-color: var(--bg-page);
   position: relative;
   z-index: 5;
@@ -215,7 +215,7 @@
 
 @media (max-width: 640px) {
   .specialty-care-section {
-    padding: 3rem 0;
+    padding: 0 0 3rem;
   }
   .specialty-card {
     min-height: auto;

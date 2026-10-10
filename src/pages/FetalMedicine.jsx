@@ -158,7 +158,7 @@ export default function FetalMedicine() {
           </div>
           <div className="fetal-intro-right-img">
             <img 
-              src="/images/fetal_ultrasound_suite.jpg" 
+              src="/images/warm_family_ultrasound.png" 
               alt="Advanced Fetal Ultrasound Suite" 
               className="intro-section-img"
             />

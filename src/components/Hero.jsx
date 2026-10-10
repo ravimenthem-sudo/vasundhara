@@ -18,28 +18,25 @@ export default function Hero({ onOpenBooking, data }) {
       { label: "Diabetes Care", detail: "Sai Kiran Clinic" },
       { label: "Patient-Centred", detail: "Compassionate Focus" }
     ],
-    backgroundImage: "/images/herosection.png"
+    backgroundImage: "/images/dreamy-maternal-glow.png"
   };
 
   return (
     <section id="hero" className="hero-wrapper">
+      {/* 1. CINEMATIC BACKGROUND VISUAL LAYER */}
+      <div 
+        className="hero-background-visual"
+        style={{ backgroundImage: `url(${content.backgroundImage})` }}
+        aria-hidden="true"
+      ></div>
+
       <div className="hero-container">
-        {/* 1. CINEMATIC BACKGROUND VISUAL LAYER */}
-        <div 
-          className="hero-background-visual"
-          style={{ backgroundImage: `url(${content.backgroundImage})` }}
-          aria-hidden="true"
-        ></div>
 
         {/* 2. HTML CONTENT LAYER */}
         <div className="hero-content-container">
         <div className="hero-editorial-left">
           
-          {/* Eyebrow Badge */}
-          <div className="hero-eyebrow-pill">
-            <span className="eyebrow-pulse-dot"></span>
-            <span className="eyebrow-text">{content.eyebrow}</span>
-          </div>
+
 
           {/* Main Headline (Editorial Serif) */}
           <h1 className="hero-headline-serif">
@@ -81,16 +78,18 @@ export default function Hero({ onOpenBooking, data }) {
 
       {/* 3. OVERLAPPING HERO TRUST STRIP AT BOTTOM */}
       <div className="hero-trust-strip-bar">
-        <div className="trust-strip-container">
-          {content.trustItems.map((item, idx) => (
-            <div key={idx} className="trust-strip-item">
-              <div className="trust-item-bullet"></div>
-              <div className="trust-item-text">
-                <span className="trust-item-title">{item.label}</span>
-                <span className="trust-item-detail">{item.detail}</span>
+        <div className="trust-strip-continuous-float">
+          <div className="trust-strip-container">
+            {content.trustItems.map((item, idx) => (
+              <div key={idx} className="trust-strip-item">
+                <div className="trust-item-bullet"></div>
+                <div className="trust-item-text">
+                  <span className="trust-item-title">{item.label}</span>
+                  <span className="trust-item-detail">{item.detail}</span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

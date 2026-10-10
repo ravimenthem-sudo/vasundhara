@@ -142,7 +142,7 @@
   align-items: center;
   justify-content: center;
   flex: 1 1 auto;
-  gap: 0.65rem;
+  gap: 2.5rem;
   flex-wrap: nowrap;
 }
 
@@ -150,11 +150,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.82rem;
+  font-size: 1rem;
   font-weight: 500;
   color: var(--color-text-secondary);
   text-decoration: none;
-  padding: 4px 6px;
+  padding: 8px 12px;
   white-space: nowrap;
   position: relative;
   transition: all var(--transition-fast);
@@ -179,6 +179,83 @@
   height: 2.5px;
   background: linear-gradient(90deg, #0F766E, #0D9488);
   border-radius: var(--radius-full);
+}
+
+/* Dropdown Groups */
+.nav-dropdown-group {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-trigger {
+  cursor: default;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dropdown-icon {
+  transition: transform 0.2s ease;
+}
+
+.nav-dropdown-group:hover .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background-color: #ffffff;
+  min-width: 180px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-md);
+  padding: 8px 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  z-index: 100;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.nav-dropdown-group:hover .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Create an invisible hover bridge */
+.nav-dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 0;
+  right: 0;
+  height: 15px;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 10px 16px;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.dropdown-item:hover {
+  background-color: #F8FAFC;
+  color: var(--color-clinical-teal);
+  padding-left: 20px;
+}
+
+.dropdown-item.active {
+  color: var(--color-clinical-teal);
+  font-weight: 700;
+  background-color: #F0FDFA;
 }
 
 /* Nav CTA - Strictly Single Line */

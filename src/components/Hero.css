@@ -5,26 +5,29 @@
 
 /* MASTER HERO SECTION WRAPPER */
 .hero-wrapper {
+  position: relative;
+  z-index: 20; /* Ensures the hero and pill overlay the next section properly without cut offs */
   width: 100%;
-  padding-top: 85px; /* Clearance for fixed navbar */
-  padding-bottom: 2.5rem; /* Restored comfortable bottom gap */
+  padding-top: 71px;
+  padding-bottom: 3rem;
+  margin-bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* HERO CONTAINER (Rounded, Contained) */
+/* HERO CONTAINER (Full Bleed) */
 .hero-container {
   position: relative;
-  width: 98%; /* Increased width to reduce left/right gap */
-  max-width: 1600px; /* Increased max-width to better match navbar */
-  margin: 0 auto; /* Explicitly center */
-  min-height: 560px; /* Reduced height as requested */
-  background-color: #FFFEFB;
-  border-radius: 24px;
-  overflow: hidden;
+  z-index: 1;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  min-height: 560px;
+  background-color: transparent;
+  border-radius: 0;
   display: flex;
-  box-shadow: 0 12px 36px rgba(6, 21, 39, 0.04);
+  flex-direction: column;
 }
 
 /* 1. CINEMATIC FULL-WIDTH BACKGROUND VISUAL LAYER */
@@ -33,13 +36,13 @@
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: -3rem; /* Extend background image fully down into the gap */
   width: 100%;
-  height: 100%;
-  background-position: right 5% center; /* Keep woman on right and fetus centered */
+  height: calc(100% + 3rem); /* Ensure it covers the extended height */
+  background-position: center right;
   background-repeat: no-repeat;
   background-size: cover;
-  z-index: 1;
+  z-index: 0;
   pointer-events: none;
 }
 
@@ -48,7 +51,9 @@
   position: relative;
   z-index: 5;
   width: 100%;
-  padding: 3rem 4rem 6rem 4rem; /* Added bottom padding so image shows below the overlapping strip */
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 3rem 2rem 6rem 2rem; /* Aligned padding with nav */
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -200,38 +205,86 @@
   color: #0D9488;
 }
 
-/* OVERLAPPING HERO TRUST STRIP AT BOTTOM */
+/* PROFESSIONAL FLOATING TRUST STRIP */
 .hero-trust-strip-bar {
-  position: relative;
+  position: absolute;
+  bottom: -2rem; /* Put the strip bar at the bottom exactly where you want it */
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   z-index: 10;
-  width: 96%; /* Adjusted width for better alignment */
-  max-width: 1400px; /* Adjusted max width */
-  margin: -3.5rem auto 0 auto; /* Explicitly center and overlap with hero */
+  padding: 0 2rem;
+  background: transparent;
+  pointer-events: none;
+}
+
+.trust-strip-continuous-float {
+  animation: floatBreathing 4s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes floatBreathing {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes ribbonReveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .trust-strip-container {
-  background: #FFFFFF;
-  border-radius: 18px; /* Rounded corners approximately 18px */
-  padding: 1.25rem 2rem;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 equal feature columns */
+  display: flex;
   align-items: center;
-  gap: 1.5rem;
-  box-shadow: 0 10px 30px rgba(6, 21, 39, 0.06); /* Subtle shadow */
-  border: 1px solid rgba(6, 21, 39, 0.04);
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 0.85rem 2rem; /* Reduced padding for a sleeker look */
+  border-radius: 999px; 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+  animation: ribbonReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  pointer-events: auto; 
+  transition: all 0.3s ease;
+  flex-wrap: nowrap;
+  width: max-content;
 }
 
 .trust-strip-item {
   display: flex;
-  align-items: center; /* Vertically center icon and text */
+  align-items: center;
   gap: 0.75rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
+}
+
+.trust-strip-item:hover {
+  transform: translateY(-3px) scale(1.02);
+}
+
+.trust-strip-container:hover .trust-strip-item:not(:hover) {
+  opacity: 0.4;
+  filter: grayscale(100%);
 }
 
 .trust-item-bullet {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #0D9488;
+  background-color: #0F766E;
+  box-shadow: 0 0 12px rgba(15, 118, 110, 0.6);
 }
 
 .trust-item-text {
@@ -240,15 +293,16 @@
 }
 
 .trust-item-title {
-  font-size: 0.875rem;
-  font-weight: 700;
+  font-size: 0.85rem; /* Slightly smaller */
+  font-weight: 800;
   color: #061527;
   line-height: 1.2;
 }
 
 .trust-item-detail {
-  font-size: 0.725rem;
-  color: #64748B;
+  font-size: 0.7rem; /* Slightly smaller */
+  font-weight: 500;
+  color: #334155;
   margin-top: 0.1rem;
 }
 
@@ -278,10 +332,9 @@
 
 @media (max-width: 768px) {
   .hero-wrapper {
-    padding-top: 75px;
+    padding-top: 71px;
   }
   .hero-container {
-    width: 92%;
     min-height: auto;
   }
   .hero-background-visual {
@@ -306,11 +359,12 @@
 
 @media (max-width: 640px) {
   .hero-wrapper {
-    padding-top: 70px;
-    padding-bottom: 3rem;
+    padding-top: 71px;
+    padding-bottom: 0;
+    margin-bottom: 0;
   }
   .hero-container {
-    width: 94%;
+    /* Full bleed now */
   }
   .hero-editorial-left {
     width: 100%;
@@ -332,13 +386,15 @@
     justify-content: center;
   }
   .hero-trust-strip-bar {
-    width: 94%;
-    margin-top: -2rem;
+    width: 100%;
+    padding: 0 1rem;
+    margin: 0 auto;
   }
   .trust-strip-container {
     grid-template-columns: 1fr;
     gap: 1rem;
     padding: 1.25rem;
+    border-radius: 16px;
   }
 }
 

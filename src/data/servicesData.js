@@ -3,7 +3,7 @@ export const servicesCategoryData = [
     id: "fetal-medicine",
     title: "Fetal Medicine",
     shortDescription: "Specialised fetal assessment and pregnancy care.",
-    image: "/images/fetal_medicine_scan.jpg",
+    image: "/images/warm_prenatal_consultation.png",
     filterGroup: "fetal-medicine",
     serviceIds: ["nt-scan", "tiffa-scan", "anomaly-scan", "antenatal-sonography"]
   },
@@ -11,7 +11,7 @@ export const servicesCategoryData = [
     id: "fetal-growth-doppler",
     title: "Fetal Growth & Doppler",
     shortDescription: "Detailed fetal growth assessment and Doppler evaluation.",
-    image: "/images/fetal_growth_doppler_scan.jpg",
+    image: "/images/warm_prenatal_consultation_1.png",
     filterGroup: "fetal-medicine",
     serviceIds: ["fetal-growth-doppler-hemodynamics"]
   },
@@ -19,7 +19,7 @@ export const servicesCategoryData = [
     id: "pregnancy-ultrasound",
     title: "Pregnancy Ultrasound",
     shortDescription: "Pregnancy imaging for monitoring fetal development and wellbeing.",
-    image: "/images/pregnancy_ultrasound_scan.jpg",
+    image: "/images/joyful_prenatal_consultation.png",
     filterGroup: "fetal-medicine",
     serviceIds: ["antenatal-sonography"]
   },
@@ -27,7 +27,7 @@ export const servicesCategoryData = [
     id: "general-ultrasound",
     title: "General Ultrasound",
     shortDescription: "Advanced ultrasound imaging for accurate diagnostic evaluation.",
-    image: "/images/general_ultrasound_scan.jpg",
+    image: "/images/warm_prenatal_consultation_2.png",
     filterGroup: "diagnostics",
     serviceIds: ["general-diagnostic-ultrasound", "2d-3d-sonography", "doppler-3d-4d-imaging"]
   },
@@ -35,7 +35,7 @@ export const servicesCategoryData = [
     id: "womens-imaging",
     title: "Women's Imaging",
     shortDescription: "Specialised imaging for women's diagnostic care.",
-    image: "/images/womens_imaging_suite.jpg",
+    image: "/images/reassuring_breast_ultrasound.png",
     filterGroup: "diagnostics",
     serviceIds: ["transvaginal-sonography", "transvaginal-ultrasound"]
   },
@@ -43,7 +43,7 @@ export const servicesCategoryData = [
     id: "diabetes-care",
     title: "Diabetes Care",
     shortDescription: "Personalised diabetes evaluation, monitoring and management.",
-    image: "/images/diabetes_care_clinical.jpg",
+    image: "/images/personalised_diabetes_care.png",
     filterGroup: "diabetes-care",
     serviceIds: [
       "comprehensive-diabetes-consultation",
@@ -56,7 +56,7 @@ export const servicesCategoryData = [
     id: "vascular-doppler",
     title: "Vascular Doppler",
     shortDescription: "Doppler and vascular imaging for detailed blood-flow assessment.",
-    image: "/images/vascular_doppler_scan.jpg",
+    image: "/images/vascular_doppler_scan_clinic.png",
     filterGroup: "diagnostics",
     serviceIds: ["renal-doppler", "peripheral-arterial-venous-doppler", "vascular-imaging"]
   },
@@ -64,7 +64,7 @@ export const servicesCategoryData = [
     id: "mens-health",
     title: "Men's Health",
     shortDescription: "Specialised prostate imaging for diagnostic evaluation.",
-    image: "/images/mens_health_diagnostic.jpg",
+    image: "/images/explaining_prostate_ultrasound.png",
     filterGroup: "diagnostics",
     serviceIds: ["ultrasonography-prostate"]
   }
